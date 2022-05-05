@@ -45,10 +45,10 @@ app(yargs.argv);
 
 //node commands
 
-//create = node src/app.js --add --title="SpiderMan" --actor="Tobey Maguire"
+//create = node src/server.js --add --title="SpiderMan" --actor="Tobey Maguire"
 
-//list = node src/app.js --list
+//list = node src/server.js --list
 
-//update = node src/app.js --update --title="Spiderman" --actor="chris"
+//update = node src/server.js --update --title="Spiderman" --actor="chris"
 
-//destroy (delete) = node src/app.js --delete --title="SpiderMan"
+//destroy (delete) = node src/server.js --delete --title="SpiderMan"

@@ -1,7 +1,9 @@
 const yargs = require("yargs");
 const { sequelize } = require("./db/connection");
-//imports for CRUD functions
+//imports for CRUD functions for movies
 const { addMovie, listMovies, updateMovie, deleteMovie } = require("./movie/movieMethods");
+//imports for CRUD functions for movies
+const { addDirector, listDirector, deleteDirector } = require("./director/directorTable")
 
 const app = async (yargsObj) => {
   try {

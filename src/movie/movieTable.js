@@ -13,12 +13,5 @@ const Movie = sequelize.define("Movie", {
     },
 });
 
-const Director = sequelize.define("Director", {
-    director: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-    }
-})
 
-module.exports = {Movie, Director};
+module.exports = Movie;

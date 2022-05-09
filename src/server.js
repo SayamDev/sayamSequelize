@@ -66,6 +66,12 @@ const app = async (yargsObj) => {
   }
 };
 
+//relationsip setup between 2 tables : M to 1
+
+Director.hasMany(Movie)
+Movie.belongsTo(Director)
+
+
 app(yargs.argv);
 
 

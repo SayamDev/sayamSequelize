@@ -5,6 +5,10 @@ const { addMovie, listMovies, updateMovie, deleteMovie } = require("./movie/movi
 //imports for CRUD functions for movies
 const { addDirector, listDirector, deleteDirector } = require("./director/directorTable")
 
+//setup for requiring  table connection
+const Movie = require("./movie/movieTable")
+const Director = require("./director/directorTable")
+
 const app = async (yargsObj) => {
   try {
     await sequelize.sync();
@@ -29,7 +33,30 @@ const app = async (yargsObj) => {
       console.log(`Deleted ${yargsObj.title}`)
 
 
-    } else {
+    } else if (yargsObj.addDirec) {
+      //add director to database
+      await addDirector({director:yargsObj.director, age: yargsObj.age});
+
+    } else if (yargsObj.listDirec) {
+      //list director
+      console.log(await listDirector())
+
+    } else if (yargsObj.deleteDirec) {
+      //delete director
+      await deleteDirector ( {
+        director: yargsObj.director,
+        age: yargsObj.age
+      })
+    } else if (yargsObj.updateDirec) {
+      //update director
+      await updateMovie ({
+        title: yargsObj.title,
+        actor: yargsObj.actor
+      })
+    }
+    
+    //else last command
+    else {
       console.log("Incorrect command");
     }
 
